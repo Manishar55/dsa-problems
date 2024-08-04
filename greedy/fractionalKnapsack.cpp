@@ -1,5 +1,6 @@
 class Solution {
   public:
+
     bool static comp(Item a, Item b) {
         
         double r1 = (double) a.value / (double) a.weight;
