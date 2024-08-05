@@ -1,3 +1,4 @@
+
 #include<iostream>
 using namespace std;
 
@@ -17,6 +18,11 @@ class Node{
     }
 };
 
+void insertAtHead(Node* &head, int data){
+    Node*newNode= new Node(data);
+    newNode->next=head;
+    head=newNode;
+}
 
 void print(Node* &head){
     Node*temp=head;
@@ -29,18 +35,13 @@ void print(Node* &head){
 int main(){
     Node*head=NULL;
 
-    Node*first=new Node(10);
-    Node*second=new Node(20);
-    Node*third=new Node(30);
-    Node*fourth=new Node(40);
-    Node*fifth=new Node(50);
-
-    first->next=second;
-    second->next=third;
-    third->next=fourth;
-    fourth->next=fifth;
+    insertAtHead(head, 34);
+     insertAtHead(head, 36);
+      insertAtHead(head, 94);
+       insertAtHead(head, 30);
+        insertAtHead(head, 31);
 
     cout<<"Printing the LL"<<endl;
-    print(first);
+    print(head);
     return 0;
 }
