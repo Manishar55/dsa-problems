@@ -94,6 +94,52 @@ void insertAtPos(int data, int position, Node*&head, Node*&tail){
     prev->next=newNode;
 
 }
+
+void deleteNode(int position, Node*&head, Node*&tail){
+    if(head==NULL){
+        cout<<"Can not delete LL is empty"<<endl;
+        return;
+    }
+    //deleting first node
+    if(position==1){
+        Node*temp=head;
+        head=head->next;
+        temp->next=NULL;
+        delete temp;
+        return;
+    }
+    int len=findLength(head);
+
+    //deleting last node
+    if(position==len){
+        //find prev
+        int i=1;
+        Node*prev=head;
+        while(i<position-1){
+            prev=prev->next;
+            i++;
+        } 
+        prev->next=NULL; 
+        Node*temp=tail;
+        tail=prev;
+        delete temp;
+        return;
+    }
+
+    //deleting middle node
+    //find prev and curr node
+    int i=1;
+    Node*prev=head;
+    while(i<position-1){
+        prev=prev->next;
+        i++;
+    }
+    Node*curr=prev->next;
+    prev->next=curr->next;
+    curr->next=NULL;
+    delete curr;
+}
+
 void print(Node*head){
     Node*temp=head;
     while(temp!=NULL){
@@ -115,7 +161,9 @@ int main(){
     insertAtTail(head, tail, 98);
     insertAtTail(head, tail, 90);
 
-    insertAtPos(333, 0, head, tail);
+    insertAtPos(333, 5, head, tail);
+
+    deleteNode(3, head, tail);
 
     print(head);
     cout<<endl;
