@@ -155,15 +155,18 @@ int main(){
     insertAtHead(head, tail, 10);
     insertAtHead(head, tail, 20);
     insertAtHead(head, tail, 30);
-    insertAtHead(head, tail, 40);
+    insertAtHead(head, tail, 3330);
     insertAtHead(head, tail, 50);
-    insertAtTail(head, tail, 98);
+    insertAtTail(head, tail, 878);
     insertAtTail(head, tail, 98);
     insertAtTail(head, tail, 90);
+    insertAtTail(head, tail, 98);
+    insertAtTail(head, tail, 98);
+    insertAtTail(head, tail, 908);
 
     insertAtPos(333, 5, head, tail);
 
-    deleteNode(3, head, tail);
+    // deleteNode(3, head, tail);
 
     print(head);
     cout<<endl;
